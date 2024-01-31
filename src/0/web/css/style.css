@@ -1,0 +1,36 @@
+@charset "utf-8";
+:root {
+    --font-size:max(16px, calc(100vw / 42));
+    --em-style:filled sesame;
+    --em-color:#000;
+    --color:#000;
+    --a-color:#00f;
+    --background-color:#eee;
+    --selection-color:#eee;
+    --selection-background-color:#00a;
+    --a-selection-color:#00d;
+    --a-selection-background-color:#ee0;
+    --caret-color: auto;
+    --outline-color:#000;
+    --outline-style:solid;
+    --outline-width:2px;
+    --button-focus-color:#eee;
+    --button-focus-background-color:#00a;
+}
+body, div, textarea, button {
+    font-family: 'Noto Serif JP', 'Source Han Serif JP', 'Noto Color Emoji', serif; 
+    font-size: var(--font-size);
+    line-height: 1.7em;
+    letter-spacing: 0.05em;
+    color: var(--color);
+    background-color: var(--background-color);
+    caret-color: var(--caret-color);
+    box-sizing: border-box;
+    margin:0; padding:0;
+}
+h1 { font-family: 'Noto Sans JP', 'Source Han Sans JP', 'Noto Color Emoji', sans-serif; }
+em {
+    text-emphasis: var(--em-style) var(--em-color);
+    -webkit-text-emphasis: var(--em-style) var(--em-color);
+    font-style: normal; /* 非イタリック化 */
+}
