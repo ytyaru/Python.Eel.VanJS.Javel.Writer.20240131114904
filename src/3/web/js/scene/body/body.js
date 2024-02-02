@@ -18,7 +18,7 @@ class Body {
     }
     #addElement() {
         van.add(document.body, div({style:()=>this.styler.style}, 
-            textarea({id:`manuscript-body`, rows:5, cols:40, style:`resize:none;`, 
+            textarea({id:`manuscript-body`, style:`resize:none;padding-left:1px;`, 
                 oninput:(e)=>this.parser.manuscript.val=e.target.value}, 
                 ()=>this.parser.manuscript.val),
             this.menu.make(),
@@ -164,10 +164,10 @@ class Menu {
         this._parser = parser
         this._viewer = viewer
         this._id = 'menu'
-        this._htmls = van.state(['Loading'])
+//        this._htmls = van.state(['Loading'])
         this.display = van.state('grid')
         this.writingMode = van.state('vertical-rl')
-        console.log(this.writingMode.val)
+//        console.log(this.writingMode.val)
         this.textOrientation = van.state('upright')
 //        this.overflowX = van.state('auto')
 //        this.overflowY = van.state('hidden')
@@ -180,8 +180,8 @@ class Menu {
     set isShow(v) { this.display.val = (v) ? 'grid' : 'none' }
     show() { this.display.val = 'grid' }
     hide() { this.display.val = 'none' }
-    get htmls() { return this._htmls }
-    set htmls(v) { if (Type.isArray(v)) { this._htmls.val = [...v] } }// 反応させるには新しい配列にする必要ある。VanJSの仕様
+//    get htmls() { return this._htmls }
+//    set htmls(v) { if (Type.isArray(v)) { this._htmls.val = [...v] } }// 反応させるには新しい配列にする必要ある。VanJSの仕様
     make() {
         this.buttons = this.#makeButtons()
         this.#setGrid()
@@ -271,6 +271,7 @@ class Menu {
     set isHorizontal(v) { if(v) {this.setHorizontal()} else {this.setVertical()} }
     get isVertical() { return ('vertical-rl'===this.writingMode.val) }
     get isHorizontal() { return ('horizontal-tb'===this.writingMode.val) }
+    /*
     get blockSize() {
         const [W, H, I, B] = this.#sizes
         const minLineChars = I / 16
@@ -285,7 +286,6 @@ class Menu {
         const B = (this.isVertical) ? W : H
         return [W, H, I, B]
     }
-    /*
     #onWheel(e) {
         if ('vertical-rl'===this.writingMode.val) {
             if (Math.abs(e.deltaY) < Math.abs(e.deltaX)) return;

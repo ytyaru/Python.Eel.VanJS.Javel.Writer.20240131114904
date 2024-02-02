@@ -21,6 +21,7 @@ body {
     overflow-x:hidden; overflow-y:hidden;
     width:100%; height:100%;
     padding:0; margin:0;
+    background-color: black;
 }
 body, div, textarea, button {
     font-family: 'Noto Serif JP', 'Source Han Serif JP', 'Noto Color Emoji', serif; 

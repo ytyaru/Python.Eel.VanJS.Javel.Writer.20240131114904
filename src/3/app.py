@@ -13,13 +13,17 @@ if __name__ == '__main__':
     def start_browser(dir='web', file='index.html', port=8000, cmdline_args=[]):
         print(dir, file, port, cmdline_args)
         eel.init(os.path.join(HERE, dir)) # https://github.com/python-eel/Eel
-        eel.start(file, port=port, cmdline_args=cmdline_args)
+        #eel.start(file, port=port)
+        eel.start(file, port=port, cmdline_args=cmdline_args, size=(500,500))
 
     dir = 'web'
     file = 'index.html'
     port = 8000
     cmdline_args = []
-    cmdline_args = ['--kiosk', '--disable-gpu']
+    cmdline_args = ['--auto-open-devtools-for-tabs']
+    #cmdline_args = ['--app']
+    #cmdline_args = ['--incognito']
+    #cmdline_args = ['--kiosk', '--disable-gpu']
     #cmdline_args = ['--kiosk']
     #cmdline_args = ['--start-fullscreen', '--browser-startup-dialog']
     #size = ()
